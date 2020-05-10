@@ -529,6 +529,38 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
         <translation>Per usar aquesta funció, cal accedir a la interfície d'usuari de xarxa per HTTPS.</translation>
     </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation>Estat de la connexió: blocat pel tallafoc</translation>
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation>Estat de la connexió: connectat</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation>Límits de velocitat alternatius: desactivats</translation>
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation>Icona de la velocitat de baixada</translation>
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation>Estat de la connexió</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation>Límits de velocitat alternatius: activats</translation>
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation>Icona de la velocitat de pujada</translation>
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation>Estat de la connexió: desconnectat</translation>
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -828,15 +860,15 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
     </message>
     <message>
         <source>Encryption mode:</source>
-        <translation>Mode de xifratge:</translation>
+        <translation>Mode d'encriptació</translation>
     </message>
     <message>
         <source>Require encryption</source>
-        <translation>Requereix xifratge</translation>
+        <translation>Requereix l'encriptació</translation>
     </message>
     <message>
         <source>Disable encryption</source>
-        <translation>Inhabilita el xifratge</translation>
+        <translation>Inhabilita l'encriptació</translation>
     </message>
     <message>
         <source>Enable anonymous mode</source>
@@ -1063,10 +1095,6 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <translation>Informació: la contrasenya es desa sense encriptar.</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>Supersembra estricta:</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>Algorisme de mode mesclat uTP-TCP:</translation>
     </message>
@@ -1105,10 +1133,6 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
     <message>
         <source>When ratio reaches</source>
         <translation>Quan la ràtio assoleixi</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">s</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1227,10 +1251,6 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <translation>Ranures fixes</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">Resol els països dels clients (GeoIP):</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>Avançat</translation>
     </message>
@@ -1283,31 +1303,39 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <translation>Temps d'espera de la sessió:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">Escolta l'adreça IPv6 (requereix reinici):</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
-        <translation type="unfinished" />
+        <translation>Resol els països dels clients:</translation>
     </message>
     <message>
         <source>ban for:</source>
-        <translation type="unfinished" />
+        <translation>prohibeix per a:</translation>
     </message>
     <message>
         <source>Use piece extent affinity (requires libtorrent &gt;= 1.2.2):</source>
-        <translation type="unfinished" />
+        <translation>Usa l'afinitat d'extensió de tros (requereix libtorrent &gt;= 1.2.2):</translation>
     </message>
     <message>
         <source>Stop tracker timeout:</source>
-        <translation type="unfinished" />
+        <translation>Atura el temps d'espera del rastrejador:</translation>
     </message>
     <message>
         <source>Ban client after consecutive failures:</source>
-        <translation type="unfinished" />
+        <translation>Prohibeix el client després de fallades consecutives:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation>Habilita la galeta de bandera de seguretat (requereix HTTPS)</translation>
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation>Durada de la cessió d'UPnP [0: cessió permanent]:</translation>
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1370,10 +1398,6 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <translation>Fitxers</translation>
     </message>
     <message>
-        <source>Country</source>
-        <translation type="vanished">País</translation>
-    </message>
-    <message>
         <source>Ban peer permanently</source>
         <translation>Prohibeix el client permanentment</translation>
     </message>
@@ -1391,7 +1415,7 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
     </message>
     <message>
         <source>Country/Region</source>
-        <translation type="unfinished" />
+        <translation>País / regió</translation>
     </message>
 </context>
 <context>
@@ -1776,27 +1800,27 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
     </message>
     <message>
         <source>Stalled Uploading (%1)</source>
-        <translation type="unfinished" />
+        <translation>Càrrega interrompuda (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (%1)</source>
-        <translation type="unfinished" />
+        <translation>Baixada interrompuda (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (0)</source>
-        <translation type="unfinished" />
+        <translation>Baixada interrompuda (0)</translation>
     </message>
     <message>
         <source>Stalled (0)</source>
-        <translation type="unfinished" />
+        <translation>Interromputs (0)</translation>
     </message>
     <message>
         <source>Stalled Uploading (0)</source>
-        <translation type="unfinished" />
+        <translation>Càrrega interrompuda (0)</translation>
     </message>
     <message>
         <source>Stalled (%1)</source>
-        <translation type="unfinished" />
+        <translation>Interromputs (%1)</translation>
     </message>
 </context>
 <context>
@@ -2138,7 +2162,7 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
     </message>
     <message>
         <source>Stalled</source>
-        <translation>Calat</translation>
+        <translation>Interromput</translation>
     </message>
 </context>
 <context>
@@ -2763,10 +2787,6 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
         <translation>Quant al qBittorrent</translation>
     </message>
     <message>
-        <source>Libraries</source>
-        <translation type="vanished">Biblioteques</translation>
-    </message>
-    <message>
         <source>License</source>
         <translation>Llicència</translation>
     </message>
@@ -2788,11 +2808,11 @@ Si us plau, no useu cap caràcter especial al nom de la categoria.</translation>
     </message>
     <message>
         <source>Software Used</source>
-        <translation type="unfinished" />
+        <translation>Programari usat</translation>
     </message>
     <message>
         <source>The free IP to Country Lite database by DB-IP is used for resolving the countries of peers. The database is licensed under the Creative Commons Attribution 4.0 International License</source>
-        <translation type="unfinished" />
+        <translation>La IP lliure per a Country Lite de DB-IP s’usa per resoldre els països dels clients. La base de dades té llicència internacional de Creative Commons Attribution 4.0.</translation>
     </message>
 </context>
 <context>

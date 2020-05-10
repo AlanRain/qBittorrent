@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2015, 2018  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,25 +26,43 @@
  * exception statement from your version.
  */
 
-#pragma once
+#ifndef FILTERPARSERTHREAD_H
+#define FILTERPARSERTHREAD_H
 
-#include <QDir>
-#include <QObject>
+#include <libtorrent/ip_filter.hpp>
 
-class QByteArray;
+#include <QThread>
 
-class ResumeDataSavingManager : public QObject
+class QDataStream;
+
+class FilterParserThread final : public QThread
 {
     Q_OBJECT
-    Q_DISABLE_COPY(ResumeDataSavingManager)
 
 public:
-    explicit ResumeDataSavingManager(const QString &resumeFolderPath);
+    FilterParserThread(QObject *parent = nullptr);
+    ~FilterParserThread();
+    void processFilterFile(const QString &filePath);
+    lt::ip_filter IPfilter();
 
-public slots:
-    void save(const QString &filename, const QByteArray &data) const;
-    void remove(const QString &filename) const;
+signals:
+    void IPFilterParsed(int ruleCount);
+    void IPFilterError();
+
+protected:
+    void run() override;
 
 private:
-    QDir m_resumeDataDir;
+    int findAndNullDelimiter(char *const data, char delimiter, int start, int end, bool reverse = false);
+    int trim(char *const data, int start, int end);
+    int parseDATFilterFile();
+    int parseP2PFilterFile();
+    int getlineInStream(QDataStream &stream, std::string &name, char delim);
+    int parseP2BFilterFile();
+
+    bool m_abort;
+    QString m_filePath;
+    lt::ip_filter m_filter;
 };
+
+#endif // BITTORRENT_FILTERPARSERTHREAD_H

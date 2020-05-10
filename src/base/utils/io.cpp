@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2020  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2020  Mike Tzou (Chocobo1)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,18 +26,50 @@
  * exception statement from your version.
  */
 
-#pragma once
+#include "io.h"
 
-#include <libtorrent/extensions.hpp>
-#include <libtorrent/version.hpp>
+#include <QByteArray>
+#include <QFileDevice>
 
-class NativeSessionExtension : public lt::plugin
+Utils::IO::FileDeviceOutputIterator::FileDeviceOutputIterator(QFileDevice &device, const int bufferSize)
+    : m_device {&device}
+    , m_buffer {std::make_shared<QByteArray>()}
+    , m_bufferSize {bufferSize}
 {
-#if (LIBTORRENT_VERSION_NUM >= 10200)
-    lt::feature_flags_t implemented_features() override;
-    std::shared_ptr<lt::torrent_plugin> new_torrent(const lt::torrent_handle &torrentHandle, void *userData) override;
-#else
-    boost::shared_ptr<lt::torrent_plugin> new_torrent(const lt::torrent_handle &torrentHandle, void *userData) override;
-#endif
-    void on_alert(const lt::alert *alert) override;
-};
+    m_buffer->reserve(bufferSize);
+}
+
+Utils::IO::FileDeviceOutputIterator::~FileDeviceOutputIterator()
+{
+    if (m_buffer.use_count() == 1) {
+        if (m_device->error() == QFileDevice::NoError)
+            m_device->write(*m_buffer);
+        m_buffer->clear();
+    }
+}
+
+Utils::IO::FileDeviceOutputIterator &Utils::IO::FileDeviceOutputIterator::operator=(const char c)
+{
+    m_buffer->append(c);
+    if (m_buffer->size() >= m_bufferSize) {
+        if (m_device->error() == QFileDevice::NoError)
+            m_device->write(*m_buffer);
+        m_buffer->clear();
+    }
+    return *this;
+}
+
+Utils::IO::FileDeviceOutputIterator &Utils::IO::FileDeviceOutputIterator::operator*()
+{
+    return *this;
+}
+
+Utils::IO::FileDeviceOutputIterator &Utils::IO::FileDeviceOutputIterator::operator++()
+{
+    return *this;
+}
+
+Utils::IO::FileDeviceOutputIterator &Utils::IO::FileDeviceOutputIterator::operator++(int)
+{
+    return *this;
+}

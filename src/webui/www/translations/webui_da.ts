@@ -528,6 +528,38 @@
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
         <translation>Webgrænsefladen skal tilgås over HTTPS, for at bruge denne funktionalitet</translation>
     </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -1062,10 +1094,6 @@
         <translation>Info: Adgangskoden gemmes ukrypteret</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>Streng superseeding:</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>μTP-TCP blandet-tilstand-algoritme:</translation>
     </message>
@@ -1104,10 +1132,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>Når deleforhold når</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">sek.</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1226,10 +1250,6 @@
         <translation>Fastgjorte pladser</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">Oversæt modparters lande (GeoIP):</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>Avanceret</translation>
     </message>
@@ -1282,10 +1302,6 @@
         <translation>Sessiontimeout:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">Lyt på IPv6-adresse (kræver genstart):</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
         <translation type="unfinished" />
     </message>
@@ -1307,6 +1323,18 @@
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1367,10 +1395,6 @@
         <source>Files</source>
         <comment>i.e. files that are being downloaded right now</comment>
         <translation>Filer</translation>
-    </message>
-    <message>
-        <source>Country</source>
-        <translation type="vanished">Land</translation>
     </message>
     <message>
         <source>Ban peer permanently</source>
@@ -2760,10 +2784,6 @@
     <message>
         <source>About qBittorrent</source>
         <translation>Om qBittorrent</translation>
-    </message>
-    <message>
-        <source>Libraries</source>
-        <translation type="vanished">Biblioteker</translation>
     </message>
     <message>
         <source>License</source>

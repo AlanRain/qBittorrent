@@ -1,6 +1,7 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2019  Mike Tzou (Chocobo1)
+ * Copyright (C) 2015, 2018  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -28,34 +29,40 @@
 
 #pragma once
 
-#include <QWidget>
+#include <QNetworkReply>
 
-class QString;
+#include "base/net/downloadmanager.h"
 
-class TriStateWidget : public QWidget
+class QObject;
+class QUrl;
+
+class DownloadHandlerImpl final : public Net::DownloadHandler
 {
     Q_OBJECT
-    Q_DISABLE_COPY(TriStateWidget)
+    Q_DISABLE_COPY(DownloadHandlerImpl)
 
 public:
-    TriStateWidget(const QString &text, QWidget *parent);
+    DownloadHandlerImpl(Net::DownloadManager *manager, const Net::DownloadRequest &downloadRequest);
 
-    void setCheckState(Qt::CheckState checkState);
-    void setCloseOnTriggered(bool enabled);
+    void cancel() override;
 
-signals:
-    void triggered(bool checked) const;
+    QString url() const;
+    const Net::DownloadRequest downloadRequest() const;
+
+    void assignNetworkReply(QNetworkReply *reply);
 
 private:
-    QSize minimumSizeHint() const override;
+    void processFinishedDownload();
+    void checkDownloadSize(qint64 bytesReceived, qint64 bytesTotal);
+    void handleRedirection(const QUrl &newUrl);
+    void setError(const QString &error);
+    void finish();
 
-    void paintEvent(QPaintEvent *) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
-    void keyPressEvent(QKeyEvent *event) override;
+    static QString errorCodeToString(QNetworkReply::NetworkError status);
 
-    void toggleCheckState();
-
-    bool m_closeOnTriggered;
-    Qt::CheckState m_checkState;
-    const QString m_text;
+    Net::DownloadManager *m_manager = nullptr;
+    QNetworkReply *m_reply = nullptr;
+    const Net::DownloadRequest m_downloadRequest;
+    short m_redirectionCount = 0;
+    Net::DownloadResult m_result;
 };

@@ -358,7 +358,7 @@
     </message>
     <message>
         <source>Failed to update name</source>
-        <translation type="unfinished" />
+        <translation>Не вдалося оновити ім'я</translation>
     </message>
 </context>
 <context>
@@ -522,11 +522,44 @@
     </message>
     <message>
         <source>Your browser does not support this feature</source>
-        <translation type="unfinished" />
+        <translation>Ваш браузер не підтримує цю функцію</translation>
     </message>
     <message>
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
-        <translation type="unfinished" />
+        <translation>Щоб скористатися цією функцією, потрібно отримати доступ до веб-інтерфейсу через HTTPS</translation>
+    </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation>Стан з'єднання: закрито брандмауером</translation>
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation>Стан з'єднання: підключено</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation>Особливі обмеження швидкості: вимкн.</translation>
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation>Значок швидкості завантаження</translation>
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation>Статус з'єднання:
+</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation>Особливі обмеження швидкості: увімк.</translation>
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation>Значок швидкості віддачі</translation>
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation>Стан з'єднання: відключено</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1095,6 @@
         <translation>Примітка: Пароль буде збережений в нешифрованому вигляді</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>Традиційний суперсід:</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>Алгоритм змішаного режиму μTP-TCP:</translation>
     </message>
@@ -1104,10 +1133,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>При досягненні коефіцієнта роздачі</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">с</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1226,10 +1251,6 @@
         <translation>Фіксовані слоти</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">Дізнаватись країну пірів (GeoIP):</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
@@ -1282,31 +1303,39 @@
         <translation>Перерва в сеансі:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">Слухати адресу IPv6 (потрібно перезапуск):</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
-        <translation type="unfinished" />
+        <translation>Дізнатися країну пірів:</translation>
     </message>
     <message>
         <source>ban for:</source>
-        <translation type="unfinished" />
+        <translation>заборонити за:</translation>
     </message>
     <message>
         <source>Use piece extent affinity (requires libtorrent &gt;= 1.2.2):</source>
-        <translation type="unfinished" />
+        <translation>Використовувати угруповання споріднених частин (потрібен libtorrent &gt;= 1.2.2):</translation>
     </message>
     <message>
         <source>Stop tracker timeout:</source>
-        <translation type="unfinished" />
+        <translation>Тайм-аут зупинка трекера:</translation>
     </message>
     <message>
         <source>Ban client after consecutive failures:</source>
-        <translation type="unfinished" />
+        <translation>Заблокувати клієнта після послідовних збоїв:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation>Увімкнути захист cookie (потрібно HTTPS</translation>
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation>Термін оренди UPnP [0: постійний]:</translation>
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1369,10 +1398,6 @@
         <translation>Файли</translation>
     </message>
     <message>
-        <source>Country</source>
-        <translation type="vanished">Країна</translation>
-    </message>
-    <message>
         <source>Ban peer permanently</source>
         <translation>Заблокувати піра назавжди</translation>
     </message>
@@ -1390,7 +1415,7 @@
     </message>
     <message>
         <source>Country/Region</source>
-        <translation type="unfinished" />
+        <translation>Країна/Регіон</translation>
     </message>
 </context>
 <context>
@@ -1775,27 +1800,27 @@
     </message>
     <message>
         <source>Stalled Uploading (%1)</source>
-        <translation type="unfinished" />
+        <translation>Затримка вивантаження (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (%1)</source>
-        <translation type="unfinished" />
+        <translation>Затримка завантаження (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (0)</source>
-        <translation type="unfinished" />
+        <translation>Затримка завантаження (0)</translation>
     </message>
     <message>
         <source>Stalled (0)</source>
-        <translation type="unfinished" />
+        <translation>Призупинено (0)</translation>
     </message>
     <message>
         <source>Stalled Uploading (0)</source>
-        <translation type="unfinished" />
+        <translation>Затримка вивантаження (0)</translation>
     </message>
     <message>
         <source>Stalled (%1)</source>
-        <translation type="unfinished" />
+        <translation>Призупинено (%1)</translation>
     </message>
 </context>
 <context>
@@ -2762,10 +2787,6 @@
         <translation>Про qBittorrent</translation>
     </message>
     <message>
-        <source>Libraries</source>
-        <translation type="vanished">Бібліотеки</translation>
-    </message>
-    <message>
         <source>License</source>
         <translation>Ліцензія</translation>
     </message>
@@ -2787,11 +2808,11 @@
     </message>
     <message>
         <source>Software Used</source>
-        <translation type="unfinished" />
+        <translation>Використовувані програми</translation>
     </message>
     <message>
         <source>The free IP to Country Lite database by DB-IP is used for resolving the countries of peers. The database is licensed under the Creative Commons Attribution 4.0 International License</source>
-        <translation type="unfinished" />
+        <translation>Для визначення країн пірив використовується відкрита база даних DB-IP, яка ліцензується відповідно до Creative Commons Attribution 4.0 International</translation>
     </message>
 </context>
 <context>

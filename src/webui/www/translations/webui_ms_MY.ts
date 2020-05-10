@@ -528,6 +528,38 @@
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
         <translation>Untuk menggunakan fitur ini, UI Sesawang perlu dicapai melalui HTPPS</translation>
     </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -1062,10 +1094,6 @@
         <translation>Maklumat: Kata laluan disimpan tanpa tersulit</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>Super penyemaian ketat:</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>Algoritma mod bercampur μTP-TCP:</translation>
     </message>
@@ -1104,10 +1132,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>Bila nisbah dicapai</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">saat</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1226,10 +1250,6 @@
         <translation>Slot tetap</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">Lerai negara rakan (GeoIP):</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>Lanjutan</translation>
     </message>
@@ -1282,10 +1302,6 @@
         <translation>Had masa tamat sesi:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">Dengar pada alamat IPv6 (perlu mula semula):</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
         <translation type="unfinished" />
     </message>
@@ -1307,6 +1323,18 @@
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1367,10 +1395,6 @@
         <source>Files</source>
         <comment>i.e. files that are being downloaded right now</comment>
         <translation>Fail</translation>
-    </message>
-    <message>
-        <source>Country</source>
-        <translation type="vanished">Negara</translation>
     </message>
     <message>
         <source>Ban peer permanently</source>
@@ -2760,10 +2784,6 @@
     <message>
         <source>About qBittorrent</source>
         <translation>Perihal qBittorrent</translation>
-    </message>
-    <message>
-        <source>Libraries</source>
-        <translation type="vanished">Pustaka</translation>
     </message>
     <message>
         <source>License</source>

@@ -528,6 +528,38 @@
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
         <translation>Ennek a szolgáltatásnak a használatához a WebUI-t HTTPS-en keresztül kell elérni</translation>
     </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation>Kapcsolat állapota: Tűzfallal blokkolva</translation>
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation>Kapcsolat állapota: Kapcsolódva</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation>Alternatív sebességkorlátok: Kikapcsolva</translation>
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation>Letöltési sebesség ikon</translation>
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation>Kapcsolat állapota</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation>Alternatív sebességkorlátok: Bekapcsolva</translation>
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation>Feltöltési sebesség ikon</translation>
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation>Kapcsolat állapota: Szétkapcsolva</translation>
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -1062,10 +1094,6 @@
         <translation>Infó: A jelszó titkosítás nélkül kerül elmentésre</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>Szigorú szuper seed:</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>μTP-TCP kevert-mód algoritmus:</translation>
     </message>
@@ -1104,10 +1132,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>Amikor az arányt eléri</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">mp</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1226,10 +1250,6 @@
         <translation>Rögzített szálak / slotok</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">Ügyfél országának megjelenítése</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>Speciális beállítások</translation>
     </message>
@@ -1282,31 +1302,39 @@
         <translation>Munkamenet időtúllépés:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">Figyelés IPv6 címen (újraindítást igényel):</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
-        <translation type="unfinished" />
+        <translation>Ügyfél országának megjelenítése:</translation>
     </message>
     <message>
         <source>ban for:</source>
-        <translation type="unfinished" />
+        <translation>tiltás:</translation>
     </message>
     <message>
         <source>Use piece extent affinity (requires libtorrent &gt;= 1.2.2):</source>
-        <translation type="unfinished" />
+        <translation>Szeletméret-affinitás használata (szükséges libtorrent &gt;=1.2.2):</translation>
     </message>
     <message>
         <source>Stop tracker timeout:</source>
-        <translation type="unfinished" />
+        <translation>Tracker leállításának időtúllépése:</translation>
     </message>
     <message>
         <source>Ban client after consecutive failures:</source>
-        <translation type="unfinished" />
+        <translation>Ügyfél tiltása egymást követő hibák után:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation>A Secure jelző engedélyezése a sütiknél (HTTPS szükséges)</translation>
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation>UPnP bérlés időtartama [0: Állandó bérlés]:</translation>
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1369,10 +1397,6 @@
         <translation>Fájlok</translation>
     </message>
     <message>
-        <source>Country</source>
-        <translation type="vanished">Ország</translation>
-    </message>
-    <message>
         <source>Ban peer permanently</source>
         <translation>Peer kitiltása végleg</translation>
     </message>
@@ -1390,7 +1414,7 @@
     </message>
     <message>
         <source>Country/Region</source>
-        <translation type="unfinished" />
+        <translation>Ország/régió</translation>
     </message>
 </context>
 <context>
@@ -1775,27 +1799,27 @@
     </message>
     <message>
         <source>Stalled Uploading (%1)</source>
-        <translation type="unfinished" />
+        <translation>Elakadt feltöltés (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (%1)</source>
-        <translation type="unfinished" />
+        <translation>Elakadt letöltés (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (0)</source>
-        <translation type="unfinished" />
+        <translation>Elakadt letöltés (0)</translation>
     </message>
     <message>
         <source>Stalled (0)</source>
-        <translation type="unfinished" />
+        <translation>Elakadt (0)</translation>
     </message>
     <message>
         <source>Stalled Uploading (0)</source>
-        <translation type="unfinished" />
+        <translation>Elakadt feltöltés (0)</translation>
     </message>
     <message>
         <source>Stalled (%1)</source>
-        <translation type="unfinished" />
+        <translation>Elakadt (%1)</translation>
     </message>
 </context>
 <context>
@@ -2762,10 +2786,6 @@
         <translation>A qBittorrent névjegye</translation>
     </message>
     <message>
-        <source>Libraries</source>
-        <translation type="vanished">Könyvtárak</translation>
-    </message>
-    <message>
         <source>License</source>
         <translation>Licenc</translation>
     </message>
@@ -2787,11 +2807,11 @@
     </message>
     <message>
         <source>Software Used</source>
-        <translation type="unfinished" />
+        <translation>Használatban lévő szoftver</translation>
     </message>
     <message>
         <source>The free IP to Country Lite database by DB-IP is used for resolving the countries of peers. The database is licensed under the Creative Commons Attribution 4.0 International License</source>
-        <translation type="unfinished" />
+        <translation>A DB-IP ingyenes IP to Country Lite adatbázisát a partnerek országának meghatározására használjuk. Az adatbázis Creative Commons Nevezd meg! 4.0 nemzetközi licenc alatt érhető el.</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2019  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2019  sledgehammer999 <hammered999@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,44 +26,27 @@
  * exception statement from your version.
  */
 
-#pragma once
+#include "logfiltermodel.h"
 
-#include <vector>
+#include "logmodel.h"
 
-#include <libtorrent/fwd.hpp>
-#include <libtorrent/version.hpp>
-
-#include <QHash>
-
-#include "base/net/portforwarder.h"
-
-#if (LIBTORRENT_VERSION_NUM < 10200)
-using LTPortMapping = int;
-#else
-#include <libtorrent/portmap.hpp>
-using LTPortMapping = lt::port_mapping_t;
-#endif
-
-class PortForwarderImpl : public Net::PortForwarder
+LogFilterModel::LogFilterModel(const Log::MsgTypes types, QObject *parent)
+    : QSortFilterProxyModel(parent)
+    , m_types(types)
 {
-    Q_OBJECT
-    Q_DISABLE_COPY(PortForwarderImpl)
+}
 
-public:
-    explicit PortForwarderImpl(lt::session *provider, QObject *parent = nullptr);
-    ~PortForwarderImpl() override;
+void LogFilterModel::setMessageTypes(const Log::MsgTypes types)
+{
+    m_types = types;
+    invalidateFilter();
+}
 
-    bool isEnabled() const override;
-    void setEnabled(bool enabled) override;
+bool LogFilterModel::filterAcceptsRow(const int sourceRow, const QModelIndex &sourceParent) const
+{
+    const QAbstractItemModel *const sourceModel = this->sourceModel();
+    const QModelIndex index = sourceModel->index(sourceRow, 0, sourceParent);
+    const Log::MsgType type = static_cast<Log::MsgType>(sourceModel->data(index, BaseLogModel::TypeRole).toInt());
 
-    void addPort(quint16 port) override;
-    void deletePort(quint16 port) override;
-
-private:
-    void start();
-    void stop();
-
-    bool m_active;
-    lt::session *m_provider;
-    QHash<quint16, std::vector<LTPortMapping>> m_mappedPorts;
-};
+    return m_types.testFlag(type);
+}

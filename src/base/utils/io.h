@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2020  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2020  Mike Tzou (Chocobo1)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -28,22 +28,36 @@
 
 #pragma once
 
-#include <libtorrent/extensions.hpp>
-#include <libtorrent/torrent_handle.hpp>
-#include <libtorrent/version.hpp>
+#include <iterator>
+#include <memory>
 
-class NativeTorrentExtension : public lt::torrent_plugin
+class QByteArray;
+class QFileDevice;
+
+namespace Utils
 {
-public:
-    explicit NativeTorrentExtension(const lt::torrent_handle &torrentHandle);
+    namespace IO
+    {
+        // A wrapper class that satisfy LegacyOutputIterator requirement
+        class FileDeviceOutputIterator
+            : public std::iterator<std::output_iterator_tag, void, void, void, void>
+        {
+        public:
+            explicit FileDeviceOutputIterator(QFileDevice &device, const int bufferSize = (4 * 1024));
+            FileDeviceOutputIterator(const FileDeviceOutputIterator &other) = default;
+            ~FileDeviceOutputIterator();
 
-private:
-#if (LIBTORRENT_VERSION_NUM < 10200)
-    void on_state(int state) override;
-#else
-    void on_state(lt::torrent_status::state_t state) override;
-#endif
-    bool on_pause() override;
+            // mimic std::ostream_iterator behavior
+            FileDeviceOutputIterator &operator=(char c);
+            // TODO: make these `constexpr` in C++17
+            FileDeviceOutputIterator &operator*();
+            FileDeviceOutputIterator &operator++();
+            FileDeviceOutputIterator &operator++(int);
 
-    lt::torrent_handle m_torrentHandle;
-};
+        private:
+            QFileDevice *m_device;
+            std::shared_ptr<QByteArray> m_buffer;
+            int m_bufferSize;
+        };
+    }
+}

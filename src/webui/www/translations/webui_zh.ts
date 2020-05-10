@@ -528,6 +528,38 @@
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
         <translation>要使用此功能，WebUI 需要通过 HTTPS 访问</translation>
     </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation>连接状态：有防火墙</translation>
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation>连接状态：连接正常</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation>备用速度限制：关闭</translation>
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation>下载速度图标</translation>
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation>连接状态</translation>
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation>备用速度限制：开启</translation>
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation>上传速度图标</translation>
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation>连接状态：断开连接</translation>
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -1062,10 +1094,6 @@
         <translation>提示：密码未加密</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>严格超级做种:</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>μTP-TCP 混合模式策略:</translation>
     </message>
@@ -1104,10 +1132,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>当分享率达到</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">秒</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1226,10 +1250,6 @@
         <translation>固定窗口数</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">解析用户所在地区 (GeoIP):</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>高级</translation>
     </message>
@@ -1282,31 +1302,39 @@
         <translation>会话超时:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">监听 IPv6 地址（需要重启）：</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
-        <translation type="unfinished" />
+        <translation>解析用户所在国家：</translation>
     </message>
     <message>
         <source>ban for:</source>
-        <translation type="unfinished" />
+        <translation>禁止：</translation>
     </message>
     <message>
         <source>Use piece extent affinity (requires libtorrent &gt;= 1.2.2):</source>
-        <translation type="unfinished" />
+        <translation>使用块扩展数据块关联(需要libtorrent &gt;=1.2.2)：</translation>
     </message>
     <message>
         <source>Stop tracker timeout:</source>
-        <translation type="unfinished" />
+        <translation>停止tracker超时：</translation>
     </message>
     <message>
         <source>Ban client after consecutive failures:</source>
-        <translation type="unfinished" />
+        <translation>连续失败后禁止客户端：</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation>启用cookie安全标志（需要HTTPS）</translation>
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation>UPnP 租期 [0：永久 ]：</translation>
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1369,10 +1397,6 @@
         <translation>文件</translation>
     </message>
     <message>
-        <source>Country</source>
-        <translation type="vanished">国家</translation>
-    </message>
-    <message>
         <source>Ban peer permanently</source>
         <translation>永久禁止用户</translation>
     </message>
@@ -1390,7 +1414,7 @@
     </message>
     <message>
         <source>Country/Region</source>
-        <translation type="unfinished" />
+        <translation>国家/地区</translation>
     </message>
 </context>
 <context>
@@ -1775,27 +1799,27 @@
     </message>
     <message>
         <source>Stalled Uploading (%1)</source>
-        <translation type="unfinished" />
+        <translation>上传已暂停 (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (%1)</source>
-        <translation type="unfinished" />
+        <translation>下载已暂停 (%1)</translation>
     </message>
     <message>
         <source>Stalled Downloading (0)</source>
-        <translation type="unfinished" />
+        <translation>暂停下载 (0)</translation>
     </message>
     <message>
         <source>Stalled (0)</source>
-        <translation type="unfinished" />
+        <translation>暂停 (0)</translation>
     </message>
     <message>
         <source>Stalled Uploading (0)</source>
-        <translation type="unfinished" />
+        <translation>上传已暂停 (0)</translation>
     </message>
     <message>
         <source>Stalled (%1)</source>
-        <translation type="unfinished" />
+        <translation>暂停 (%1)</translation>
     </message>
 </context>
 <context>
@@ -2762,10 +2786,6 @@
         <translation>关于 qBittorrent</translation>
     </message>
     <message>
-        <source>Libraries</source>
-        <translation type="vanished">库</translation>
-    </message>
-    <message>
         <source>License</source>
         <translation>许可证</translation>
     </message>
@@ -2787,11 +2807,11 @@
     </message>
     <message>
         <source>Software Used</source>
-        <translation type="unfinished" />
+        <translation>使用的软件</translation>
     </message>
     <message>
         <source>The free IP to Country Lite database by DB-IP is used for resolving the countries of peers. The database is licensed under the Creative Commons Attribution 4.0 International License</source>
-        <translation type="unfinished" />
+        <translation>DB-IP提供的免费IP to Country Lite数据库用于解析节点所在的国家。 该数据库已根据知识共享署名4.0国际许可协议获得许可</translation>
     </message>
 </context>
 <context>

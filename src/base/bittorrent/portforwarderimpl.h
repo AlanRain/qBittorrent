@@ -1,7 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2015, 2018  Vladimir Golovnev <glassez@yandex.ru>
- * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
+ * Copyright (C) 2019  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,40 +28,42 @@
 
 #pragma once
 
-#include <QNetworkReply>
+#include <vector>
 
-#include "base/net/downloadmanager.h"
+#include <libtorrent/fwd.hpp>
+#include <libtorrent/version.hpp>
 
-class QObject;
-class QUrl;
+#include <QHash>
 
-class DownloadHandlerImpl : public Net::DownloadHandler
+#include "base/net/portforwarder.h"
+
+#if (LIBTORRENT_VERSION_NUM < 10200)
+using LTPortMapping = int;
+#else
+#include <libtorrent/portmap.hpp>
+using LTPortMapping = lt::port_mapping_t;
+#endif
+
+class PortForwarderImpl final : public Net::PortForwarder
 {
     Q_OBJECT
-    Q_DISABLE_COPY(DownloadHandlerImpl)
+    Q_DISABLE_COPY(PortForwarderImpl)
 
 public:
-    DownloadHandlerImpl(Net::DownloadManager *manager, const Net::DownloadRequest &downloadRequest);
+    explicit PortForwarderImpl(lt::session *provider, QObject *parent = nullptr);
+    ~PortForwarderImpl() override;
 
-    void cancel() override;
+    bool isEnabled() const override;
+    void setEnabled(bool enabled) override;
 
-    QString url() const;
-    const Net::DownloadRequest downloadRequest() const;
-
-    void assignNetworkReply(QNetworkReply *reply);
+    void addPort(quint16 port) override;
+    void deletePort(quint16 port) override;
 
 private:
-    void processFinishedDownload();
-    void checkDownloadSize(qint64 bytesReceived, qint64 bytesTotal);
-    void handleRedirection(const QUrl &newUrl);
-    void setError(const QString &error);
-    void finish();
+    void start();
+    void stop();
 
-    static QString errorCodeToString(QNetworkReply::NetworkError status);
-
-    Net::DownloadManager *m_manager = nullptr;
-    QNetworkReply *m_reply = nullptr;
-    const Net::DownloadRequest m_downloadRequest;
-    short m_redirectionCount = 0;
-    Net::DownloadResult m_result;
+    bool m_active;
+    lt::session *m_provider;
+    QHash<quint16, std::vector<LTPortMapping>> m_mappedPorts;
 };

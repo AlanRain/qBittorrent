@@ -40,11 +40,11 @@
 #include <QXmlStreamEntityResolver>
 #include <QXmlStreamReader>
 
-#include "../rss_article.h"
+#include "rss_article.h"
 
 namespace
 {
-    class XmlStreamEntityResolver : public QXmlStreamEntityResolver
+    class XmlStreamEntityResolver final : public QXmlStreamEntityResolver
     {
     public:
         QString resolveUndeclaredEntity(const QString &name) override

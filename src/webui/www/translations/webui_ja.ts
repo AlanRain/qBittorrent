@@ -528,6 +528,38 @@
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
         <translation>この機能を使うには HTTP経由で WebUI にアクセスしてください</translation>
     </message>
+    <message>
+        <source>Connection status: Firewalled</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status: Connected</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Alternative speed limits: Off</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Download speed icon</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Alternative speed limits: On</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Upload speed icon</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Connection status: Disconnected</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -1062,10 +1094,6 @@
         <translation>情報: パスワードは暗号化されずに保存されます</translation>
     </message>
     <message>
-        <source>Strict super seeding:</source>
-        <translation>正確なスーパーシード</translation>
-    </message>
-    <message>
         <source>μTP-TCP mixed mode algorithm:</source>
         <translation>μTP-TCP 混在状態のアルゴリズム:</translation>
     </message>
@@ -1104,10 +1132,6 @@
     <message>
         <source>When ratio reaches</source>
         <translation>達する共有比</translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation type="vanished">秒</translation>
     </message>
     <message>
         <source>When seeding time reaches</source>
@@ -1226,10 +1250,6 @@
         <translation>スロット数固定</translation>
     </message>
     <message>
-        <source>Resolve peer countries (GeoIP):</source>
-        <translation type="vanished">ピアの国籍を解決 (GeoIP):</translation>
-    </message>
-    <message>
         <source>Advanced</source>
         <translation>高度</translation>
     </message>
@@ -1282,10 +1302,6 @@
         <translation>セッションタイムアウト:</translation>
     </message>
     <message>
-        <source>Listen on IPv6 address (requires restart):</source>
-        <translation type="vanished">IPv6 アドレスで応答待機 (再起動が必要):</translation>
-    </message>
-    <message>
         <source>Resolve peer countries:</source>
         <translation type="unfinished" />
     </message>
@@ -1307,6 +1323,18 @@
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>UPnP lease duration [0: Permanent lease]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Header: value pairs, one per line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add custom HTTP headers</source>
         <translation type="unfinished" />
     </message>
 </context>
@@ -1369,10 +1397,6 @@
         <translation>ファイル</translation>
     </message>
     <message>
-        <source>Country</source>
-        <translation type="vanished">国</translation>
-    </message>
-    <message>
         <source>Ban peer permanently</source>
         <translation>ピアを永久に禁止にする</translation>
     </message>
@@ -1390,7 +1414,7 @@
     </message>
     <message>
         <source>Country/Region</source>
-        <translation type="unfinished" />
+        <translation>国・地域</translation>
     </message>
 </context>
 <context>
@@ -2760,10 +2784,6 @@
     <message>
         <source>About qBittorrent</source>
         <translation>qBittorrent について</translation>
-    </message>
-    <message>
-        <source>Libraries</source>
-        <translation type="vanished">ライブラリ</translation>
     </message>
     <message>
         <source>License</source>
